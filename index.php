@@ -4,13 +4,18 @@ require_once("php/controller/create-db.php");
 ?>
 <html>
     <head>
-        <title>Gump: First Strike</title>
+        <title>Batman: Gotham Defender</title>
         <link rel="stylesheet" type="text/css" media="screen" href="index.css">
         <link rel="shortcut icon" href="http://www.halopedia.org/images/0/05/Marathon_logo.jpg">
         <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+        <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css">
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+        <link type="text/css" rel="stylesheet" href="css/Customization.css">
+        
         <link rel="apple-touch-icon" href="icons/touch-icon-iphone-60x60.png">
         <link rel="apple-touch-icon" sizes="76x76" href="icons/touch-icon-ipad-76x76.png">
         <link rel="apple-touch-icon" sizes="120x120" href="icons/touch-icon-iphone-retina-120x120.png">
@@ -25,7 +30,7 @@ require_once("php/controller/create-db.php");
 
 <form id="input" method="post">
     <div class="field">
-        <label for="username"Username></label>
+        <label for="username"Username>Username</label>
         <input type='text' name='username' id='username' autocomplete="off">      
     </div>
 
@@ -37,7 +42,12 @@ require_once("php/controller/create-db.php");
     <button type='button' id='register'>Register</button>
     <button type='button' id='load'>Load</button>
     <button type='button' id='mainmenu'>Main Menu</button>
-
+    
+    <ul class="nav nav-pills">
+        <li role="presentation" id='register'><a href="Register.php">Register</a></li>
+        <li role="presentation" id='mainmenu'><a href="index.php">Main Menu</a></li>
+        <li role="presentation" id='load'class="active"><a href="Login.php">Load</a></li>
+    </ul>
 </form>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 

@@ -1,0 +1,24 @@
+.post {
+    text-decoration-color: black;
+    text-align: center;
+}
+body{
+    background-color: #000;
+    background-size: cover;
+    text-align: center;
+}
+
+.form {
+    background-color: #000;
+    background-size: cover;
+}
+
+Login-form {
+    background-color: #000;
+    background-size: cover;
+}
+
+Register {
+    background-color: #000;
+    background-size: cover;
+}

@@ -5,12 +5,12 @@ session_start();
 session_regenerate_id(true);
 
 
-$path = '/JoshuaLeonardo/php/';
+$path = '/JoshuaTLeonardo/php/';
 
 $host = "localhost";
 $username = "root";
 $password = "root";
-$database = "JoshuaLeonardo_db";
+$database = "JoshuaTLeonardo_db";
 
 if (!isset($_SESSION["connection"])) {
     $connection = new Database($host, $username, $password, $database);

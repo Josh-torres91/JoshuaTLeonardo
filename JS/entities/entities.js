@@ -6,7 +6,6 @@ game.PlayerEntity = me.Entity.extend({
         this.type = "PlayerEntity";
         this.setFlags();
 
-
         this.attack = game.data.playerAttack;
         this.lastAttack = new Date().getTime();
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
