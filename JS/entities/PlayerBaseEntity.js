@@ -1,13 +1,13 @@
 game.PlayerBaseEntity = me.Entity.extend({
     init: function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y, {
-                image: "tower",
+                image: "Batmobile",
                 width: 100,
-                height: 100,
+                height: 75,
                 spritewidth: "100",
-                spriteheight: "100",
+                spriteheight: "75",
                 getShape: function() {
-                    return(new me.Rect(0, 0, 100, 70)).toPolygon();
+                    return(new me.Rect(0, 0, 100, 75)).toPolygon();
                 }
 
             }]);

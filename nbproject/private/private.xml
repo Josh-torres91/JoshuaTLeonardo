@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/css/Customization.css</file>
+            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/game.js</file>
+            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/entities/entities.js</file>
             <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/resources.js</file>
             <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/index.php</file>
-            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/entities/BossEntities.js</file>
-            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/entities/EnemyCreep.js</file>
+            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/index.css</file>
+            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/entities/PlayerBaseEntity.js</file>
+            <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/entities/EnemyBaseEntity.js</file>
             <file>file:/C:/xampp/htdocs/JoshuaTLeonardo/JS/screens/title.js</file>
         </group>
     </open-files>

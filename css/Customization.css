@@ -22,3 +22,12 @@ Register {
     background-color: #000;
     background-size: cover;
 }
+
+ul{
+    
+}
+
+li{
+    margin-left: 550px;
+    background-color: gray;
+}

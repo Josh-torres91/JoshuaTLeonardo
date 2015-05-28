@@ -6,12 +6,14 @@ var game = {
         score: 0,
         option1: "",
         option2: "",
-        enemyBaseHealth: 5,
-        playerBasehealth: 5,
+        enemyBaseHealth: 30,
+        playerBasehealth: 30,
         enemyCreepHealth: 6,
-        playerHealth: 10,
+        BossCreepHealth: 50,
+        playerHealth: 100,
+        BossCeepAttack: 10,
         enemyCreepAttack: 1,
-        playerAttack: 1,
+        playerAttack: 5,
 //        orcBaseDamage: 10,
 //        orcBaseHealth: 10,
 //        orcBaseSpeed: 3,
@@ -19,6 +21,7 @@ var game = {
         playerAttackTimer: 1000,
         enemyCreepAttackTimer: 1000,
         playerMoveSpeed: 6,
+        BossMoveSpeed: 7,
         creepMoveSpeed: 6,
         gameTimerManager: "",
         heroDeathManager: "",
@@ -79,6 +82,7 @@ var game = {
         me.pool.register("Playerbase", game.PlayerBaseEntity, true);
         me.pool.register("Enemybase", game.EnemyBaseEntity, true);
         me.pool.register("EnemyCreep", game.EnemyCreep, true);
+        me.pool.register("", game.PlayerEntity, true);
         me.pool.register("GameTimerManager", game.GameTimerManager);
         me.pool.register("HeroDeathManager", game.HeroDeathManager);
         me.pool.register("ExperienceManager", game.ExperienceManager);

@@ -1,13 +1,13 @@
 game.EnemyBaseEntity = me.Entity.extend({
     init: function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y, {
-                image: "tower",
-                width: 100,
-                height: 100,
-                spritewidth: "100",
-                spriteheight: "100",
+                image: "Joker",
+                width: 122,
+                height: 297,
+                spritewidth: "122",
+                spriteheight: "297",
                 getShape: function() {
-                    return(new me.Rect(0, 0, 100, 100)).toPolygon();
+                    return(new me.Rect(0, 0, 122, 297)).toPolygon();
                 }
 
             }]);
@@ -30,7 +30,7 @@ game.EnemyBaseEntity = me.Entity.extend({
         if (this.health <= 0) {
             this.broken = true;
             game.data.win = true;
-            this.renderable.setCurrentAnimation("broken");
+//            this.renderable.setCurrentAnimation("broken");
         }
         this.body.update(delta);
         this._super(me.Entity, "update", [delta]);

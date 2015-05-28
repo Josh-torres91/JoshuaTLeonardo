@@ -1,16 +1,16 @@
 game.BossEntities = me.Entity.extend({
     init: function(x, y, settings) {
         this._super(me.Entity, 'init', [x, y, {
-                image: "creep1",
-                width: 32,
-                height: 64,
-                spritewidth: "32",
-                spriteheight: "64",
+                image: "gloop",
+                width: 103,
+                height: 85,
+                spritewidth: "103",
+                spriteheight: "85",
                 getShape: function() {
-                    return (new me.Rect(0, 0, 32, 64)).toPolygon();
+                    return (new me.Rect(0, 0, 103, 85)).toPolygon();
                 }
             }]);
-        this.health = game.data.enemyCreepHealth;
+        this.health = game.data.BossCreepHealth;
         this.alwaysUpdate = true;
         // this.attacking lets us know if
         // the enemy is attacking.
@@ -23,7 +23,7 @@ game.BossEntities = me.Entity.extend({
         this.body.setVelocity(3, 20);
 
         this.type = "BossCreep";
-        this.renderable.addAnimation("walk", [3, 4, 5], 80);
+        this.renderable.addAnimation("walk", [1, 2, 3], 80);
         this.renderable.setCurrentAnimation("walk");
     },
     
@@ -66,7 +66,7 @@ game.BossEntities = me.Entity.extend({
                 // Makes the player base call its
                 // loseHealth function and passes it a
                 // damage of 1.
-                response.b.loseHealth(game.data.enemyCreepAttack);
+                response.b.loseHealth(game.data.BossCreepAttack);
 
             }
         } else if (response.b.type === 'PlayerEntity') {
@@ -87,7 +87,7 @@ game.BossEntities = me.Entity.extend({
                 // Makes the player base call its
                 // loseHealth function and passes it a
                 // damage of 1.
-                response.b.loseHealth(game.data.enemyCreepAttack);
+                response.b.loseHealth(game.data.BossCreepAttack);
             }
         }
     }

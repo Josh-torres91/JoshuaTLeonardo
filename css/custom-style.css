@@ -34,11 +34,6 @@ body{
     background-color: #2A2C30;
 }
 
-
-#brand{
-    width: 30px;
-}
-
 img{
     width: 300px;
     height: auto;
@@ -99,4 +94,8 @@ nav {
     height: 50px;
     width: auto;
     font: arial;
+}
+    
+button{
+  margin-right: 1500px;
 }

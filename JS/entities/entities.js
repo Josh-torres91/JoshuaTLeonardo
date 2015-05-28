@@ -58,7 +58,7 @@ game.PlayerEntity = me.Entity.extend({
         this.checkAbilityKeys();
         this.setAnimation();
         me.collision.check(this, true, this.collideHandler.bind(this), true);
-        this.body.update(delta);
+//        this.body.update(delta);
         this._super(me.Entity, "update", [delta]);
         return true;
     },

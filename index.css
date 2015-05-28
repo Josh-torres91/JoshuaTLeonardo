@@ -1,7 +1,7 @@
 body {
 	background-color: #000;
 	color: #fff;
-
+        
 	/* Allow mouse dragging. */
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -21,7 +21,7 @@ body {
 	margin: auto;
 
 	/* Hide the gap for font descenders. */
-	display: block;
+	display:  block;
 	
 	/* disable scaling interpolation */
 	image-rendering: optimizeSpeed;
@@ -43,5 +43,6 @@ body {
 }
 
 #register{
-    visibility: hidden; 
+    visibility: hidden;
 }
+

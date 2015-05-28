@@ -15,7 +15,7 @@ require_once("php/controller/create-db.php");
         <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css">
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
         <link type="text/css" rel="stylesheet" href="css/Customization.css">
-        
+        <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
         <link rel="apple-touch-icon" href="icons/touch-icon-iphone-60x60.png">
         <link rel="apple-touch-icon" sizes="76x76" href="icons/touch-icon-ipad-76x76.png">
         <link rel="apple-touch-icon" sizes="120x120" href="icons/touch-icon-iphone-retina-120x120.png">
@@ -38,16 +38,14 @@ require_once("php/controller/create-db.php");
         <label for='passsword'>Password</label>
         <input type='password' name='password' id='password'>
     </div>
-
-    <button type='button' id='register'>Register</button>
-    <button type='button' id='load'>Load</button>
-    <button type='button' id='mainmenu'>Main Menu</button>
-    
-    <ul class="nav nav-pills">
-        <li role="presentation" id='register'><a href="Register.php">Register</a></li>
-        <li role="presentation" id='mainmenu'><a href="index.php">Main Menu</a></li>
-        <li role="presentation" id='load'class="active"><a href="Login.php">Load</a></li>
-    </ul>
+    <a class="btn btn-default" id='mainmenu' role="button">Main Menu</a>
+    <button class="btn btn-default" id='register' type="button">Register</button>
+    <button class="btn btn-default" id='load' type="button">Load Game</button>
+    <!--    <ul class="nav nav-pills">
+            <li role="presentation" id='register'><a>Register</a></li>
+            <li role="presentation" id='mainmenu'><a>Main Menu</a></li>
+            <li role="presentation" id='load'><a>Load</a></li>
+    </ul>-->
 </form>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -77,8 +75,8 @@ require_once("php/controller/create-db.php");
 <script type="text/javascript" src="js/screens/spendExp.js"></script>
 <script type="text/javascript" src="js/screens/loadProfile.js"></script>
 <script type="text/javascript" src="js/screens/newProfile.js"></script>
-
 <script type="text/javascript">
+    
             window.onReady(function onReady() {
             game.onload();
 

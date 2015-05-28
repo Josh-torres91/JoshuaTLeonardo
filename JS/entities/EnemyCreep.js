@@ -45,7 +45,7 @@ game.EnemyCreep = me.Entity.extend({
 
         me.collision.check(this, true, this.collideHandler.bind(this), true);
 
-        this.body.update(delta);
+//        this.body.update(delta);
 
         this._super(me.Entity, "update", [delta]);
         return true;
