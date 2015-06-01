@@ -42,9 +42,11 @@ var game = {
         win: "",
         pausePos: "",
         buyscreen: "",
-        buytext: ""
-
-    },
+        buytext: "",
+        playHUD: "",
+        
+    },   
+    
     // Run on page load.
     "onload": function() {
         // Initialize the video.
@@ -59,6 +61,8 @@ var game = {
                 me.plugin.register.defer(this, debugPanel, "debug");
             });
         }
+        
+        playHUD = document.getElementById("playHUD");
         
         me.state.SPENDEXP = 112;
         me.state.LOAD = 113;
@@ -76,10 +80,12 @@ var game = {
         // Initialize melonJS and display a loading screen.
         me.state.change(me.state.LOADING);
     },
+    
     // Run on game resources loaded.
     "loaded": function() {
         me.pool.register("player", game.PlayerEntity, true);
         me.pool.register("Playerbase", game.PlayerBaseEntity, true);
+        me.pool.register("gloop", game.BossEntities, true);
         me.pool.register("Enemybase", game.EnemyBaseEntity, true);
         me.pool.register("EnemyCreep", game.EnemyCreep, true);
         me.pool.register("", game.PlayerEntity, true);
@@ -88,12 +94,10 @@ var game = {
         me.pool.register("ExperienceManager", game.ExperienceManager);
         me.pool.register("SpendGold", game.SpendGold);
         me.pool.register("spear", game.SpartanThrow);
-        
-
+        me.pool.register("levelTrigger", game.LevelTrigger);
         me.state.set(me.state.MENU, new game.TitleScreen());
         me.state.set(me.state.PLAY, new game.PlayScreen());
         me.state.set(me.state.SPENDEXP, new game.SpendExp());
-
         me.state.set(me.state.LOAD, new game.LoadProfile());
         me.state.set(me.state.NEW, new game.NewProfile());
         // Start the game.

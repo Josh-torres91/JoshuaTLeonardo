@@ -19,7 +19,7 @@ game.EnemyBaseEntity = me.Entity.extend({
         this.type = "EnemyBaseEntity";
 
         this.renderable.addAnimation("idle", [0]);
-        this.renderable.addAnimation("broken", [1]);
+//        this.renderable.addAnimation("broken", [1]);
         this.renderable.setCurrentAnimation("idle");
     },
     

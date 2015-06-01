@@ -6,12 +6,10 @@ require_once("php/controller/create-db.php");
     <head>
         <title>Batman: Gotham Defender</title>
         <link rel="stylesheet" type="text/css" media="screen" href="index.css">
-        <link rel="shortcut icon" href="http://www.halopedia.org/images/0/05/Marathon_logo.jpg">
         <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        
         <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.css">
         <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
         <link type="text/css" rel="stylesheet" href="css/Customization.css">
@@ -41,11 +39,6 @@ require_once("php/controller/create-db.php");
     <a class="btn btn-default" id='mainmenu' role="button">Main Menu</a>
     <button class="btn btn-default" id='register' type="button">Register</button>
     <button class="btn btn-default" id='load' type="button">Load Game</button>
-    <!--    <ul class="nav nav-pills">
-            <li role="presentation" id='register'><a>Register</a></li>
-            <li role="presentation" id='mainmenu'><a>Main Menu</a></li>
-            <li role="presentation" id='load'><a>Load</a></li>
-    </ul>-->
 </form>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
@@ -63,6 +56,7 @@ require_once("php/controller/create-db.php");
 <script type="text/javascript" src="js/entities/entities.js"></script>
 <script type="text/javascript" src="js/entities/EnemyBaseEntity.js"></script>
 <script type="text/javascript" src="js/entities/PlayerBaseEntity.js"></script>
+<script type="text/javascript" src="js/entities/BossEntities.js"></script>
 <script type="text/javascript" src="js/gameManagers/GameManager.js"></script>
 <script type="text/javascript" src="js/gameManagers/GameTimerManager.js"></script>
 <script type="text/javascript" src="js/gameManagers/SpendGold.js"></script>
@@ -75,6 +69,7 @@ require_once("php/controller/create-db.php");
 <script type="text/javascript" src="js/screens/spendExp.js"></script>
 <script type="text/javascript" src="js/screens/loadProfile.js"></script>
 <script type="text/javascript" src="js/screens/newProfile.js"></script>
+<script type="text/javascript" src="js/entities/LevelTrigger.js"></script>
 <script type="text/javascript">
     
             window.onReady(function onReady() {

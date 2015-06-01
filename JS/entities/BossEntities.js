@@ -1,95 +1,56 @@
 game.BossEntities = me.Entity.extend({
     init: function(x, y, settings) {
-        this._super(me.Entity, 'init', [x, y, {
-                image: "gloop",
-                width: 103,
-                height: 85,
-                spritewidth: "103",
-                spriteheight: "85",
+       this._super(me.Entity, 'init', [x, y, {
+                image: "Boss",
+                spritewidth: "500",
+                spriteheight: "170",
+                width: 500,
+                height: 170,
                 getShape: function() {
-                    return (new me.Rect(0, 0, 103, 85)).toPolygon();
+                    return (new me.Rect(0, 0, 500, 170)).toPolygon();
                 }
             }]);
-        this.health = game.data.BossCreepHealth;
+        
+        this.spritewidth = 60;
+        var width = settings.width;
+        x = this.pos.x;
+        this.statX = x;
+        this.endX = x + width - this.spritewidth;
+        this.pos.x = x + width - this.spritewidth;
+        this.updateBounds();
+        
         this.alwaysUpdate = true;
-        // this.attacking lets us know if
-        // the enemy is attacking.
-        this.attacking = false;
-        // Keeps track of when our creep last attacked anything.
-        this.lastAttacking = new Date().getTime();
-        // Keeps track of the last time our creep hit anything.
-        this.lastHit = new Date().getTime();
-        this.now = new Date().getTime();
-        this.body.setVelocity(3, 20);
-
-        this.type = "BossCreep";
-        this.renderable.addAnimation("walk", [1, 2, 3], 80);
-        this.renderable.setCurrentAnimation("walk");
+        
+        this.walkLeft = false;
+        this.alive = true
+        this.type = "Boss";
+        
+        this.body.setVelocity(4, 6);
     },
+    uupdate: function(delta){
+        this.body.update(delta);
+        me.collision.check(this, true, this.collideHandler.bind(this), true);
     
     
-    loseHealth: function(damage) {
-        this.health = this.health - damage;
-    },
-    
-    update: function(delta) {
-        console.log("this.health");
-        if(this.health <= 0) {
+        if(this.alive){
+            if(this.walkLeft && this.pos.x <= this.statX){
+                this.walkLeft = false;
+            }else if(!this.walkLeft && this.pos.x >= this.endX){
+                this.walkLeft = true;
+            }
+            this.flipX(this.walkLeft);
+            this.body.vel.x += (this.walkLeft) ? -this.body.accel.x * me.timer.tick : this.body.accel.x * me.timer.tick;
+            
+        }else{
             me.game.world.removeChild(this);
         }
-        
-        this.now = new Date().getTime();
-
-
-        this.body.vel.x -= this.body.accel.x * me.timer.tick;
-
-        me.collision.check(this, true, this.collideHandler.bind(this), true);
-
-        this.body.update(delta);
-
+    
+    
         this._super(me.Entity, "update", [delta]);
         return true;
-    },
-    collideHandler: function(response) {
-        if (response.b.type === 'PlayerBase') {
-            this.attacking = true;
-            // this.lastAttacking=this.now;
-            this.body.vel.x = 0;
-            // Keeps moving the creep to the
-            // right to maintain its position.
-            this.pos.x = this.pos.x = 1;
-            // Checks that it has been at least
-            // 1 second since this creep hit a base.
-            if ((this.now - this.lastHit >= 1000)) {
-                // Updates the lastHit timer.
-                this.lastHit = this.now;
-                // Makes the player base call its
-                // loseHealth function and passes it a
-                // damage of 1.
-                response.b.loseHealth(game.data.BossCreepAttack);
-
-            }
-        } else if (response.b.type === 'PlayerEntity') {
-            var xdif = this.pos.x - response.b.pos.x;
-            this.attacking = true;
-            // this.lastAttacking=this.now;
-            if (xdif > 0) {
-                // Keeps moving the creep to the
-                // right to maintain its position.
-                this.pos.x = this.pos.x = 1;
-                this.body.vel.x = 0;
-            }
-            // Checks that it has been at least
-            // 1 second since this creep hit something.
-            if ((this.now - this.lastHit >= 1000) && xdif > 0) {
-                // Updates the lastHit timer.
-                this.lastHit = this.now;
-                // Makes the player base call its
-                // loseHealth function and passes it a
-                // damage of 1.
-                response.b.loseHealth(game.data.BossCreepAttack);
-            }
-        }
+    }, 
+    
+    collideHandler: function() {
+        
     }
-
 });

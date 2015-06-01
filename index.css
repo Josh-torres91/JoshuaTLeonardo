@@ -38,11 +38,7 @@ body {
   visibility: hidden;
 }
 
-#load{
+#load, #register{
+    position: absolute;
     visibility: hidden; 
 }
-
-#register{
-    visibility: hidden;
-}
-

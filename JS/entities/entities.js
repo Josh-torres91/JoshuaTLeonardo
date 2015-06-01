@@ -37,7 +37,7 @@ game.PlayerEntity = me.Entity.extend({
     },
     setAttributes: function() {
         this.health = game.data.playerHealth;
-        this.body.setVelocity(game.data.playerMoveSpeed, 20);
+        this.body.setVelocity(game.data.playerMoveSpeed, 30);
         this.attack = game.data.playerAttack;
     },
     setFlags: function() {
@@ -52,15 +52,16 @@ game.PlayerEntity = me.Entity.extend({
         this.renderable.addAnimation("attack", [65, 66, 67, 68, 69, 70, 71, 72], 80);
     },
     update: function(delta) {
+        this.body.update(delta);
+        me.collision.check(this, true, this.collideHandler.bind(this), true);
         this.now = new Date().getTime();
         this.dead = this.checkIfDead();
         this.checkKeyPressedAndMove();
         this.checkAbilityKeys();
         this.setAnimation();
-        me.collision.check(this, true, this.collideHandler.bind(this), true);
-//        this.body.update(delta);
         this._super(me.Entity, "update", [delta]);
         return true;
+          
     },
     checkIfDead: function() {
         if (this.health <= 0) {
@@ -147,7 +148,7 @@ game.PlayerEntity = me.Entity.extend({
             this.collideWithEnemyBase(response);
         } else if (response.b.type === 'EnemyCreep') {
             this.collideWithEnemyCreep(response);
-        }
+        } 
     },
     collideWithEnemyBase: function(response) {
         var ydif = this.pos.y - response.b.pos.y;
@@ -206,7 +207,6 @@ game.PlayerEntity = me.Entity.extend({
             game.data.gold += 1;
             console.log("Current gold: " + game.data.gold);
         }
-
         response.b.loseHealth(game.data.playerAttack);
     }
-}); 
+});

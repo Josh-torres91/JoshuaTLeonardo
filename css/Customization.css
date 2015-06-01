@@ -31,3 +31,9 @@ li{
     margin-left: 550px;
     background-color: gray;
 }
+
+h1, h2, h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    text-align: center;
+}
